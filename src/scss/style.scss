@@ -1,0 +1,21 @@
+﻿@import "reset";
+@import "shared";
+@import "comment";
+
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+.comments {
+  max-width: 768px;
+  list-style: none;
+  @include flex-column(1rem)
+}
+
+.comment__footer {
+  display: flex;
+  justify-content: space-between;
+}

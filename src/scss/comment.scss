@@ -7,6 +7,19 @@
   padding: 1.5rem;
   position: relative;
   font-family: 'Roboto', sans-serif;
+  width: 100%;
+  animation: 0.5s ease appearance;
+}
+
+@keyframes appearance {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .comment__delete-button {
@@ -32,4 +45,14 @@
   border: none;
   outline: none;
   cursor: pointer;
+  filter: saturate(0%);
+  transition: 0.4s filter ease;
+}
+
+.comment__like:hover {
+  filter: saturate(50%)
+}
+
+.comment__like.active {
+  filter: saturate(100%)
 }

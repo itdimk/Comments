@@ -12,7 +12,31 @@
 </head>
 
 <body>
-<ul id="comments" class="comments">
-</ul>
+<div class="container">
+
+    <form id="submit-comment" class="comment-form">
+        <label>
+            Имя
+            <input name="name" type="text" placeholder="Имя"/>
+            <span data-error hidden  class="error"></span>
+        </label>
+        <label>
+            Текст
+            <textarea name="text" placeholder="Текст"></textarea>
+            <span data-error hidden class="error"></span>
+        </label>
+
+        <label title="Дата">
+            Дата
+            <input name="date" id="inputDate" type="date"/>
+        </label>
+
+        <input  type="submit" value="Отправить">
+    </form>
+    
+    <ul id="comments" class="comments">
+    </ul>
+
+</div>
 </body>
 </html>

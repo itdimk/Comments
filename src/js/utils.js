@@ -17,6 +17,12 @@ export function setTimeNow(date) {
     date.setMinutes(now.getMinutes())
 }
 
+export function elementByHtml(html) {
+    const template = document.createElement('template')
+    template.innerHTML = html
+    return template.content.firstChild
+}
+
 function formatTime(date) {
     const hours = String(date.getHours()).padStart(2, '0')
     const min = String(date.getMinutes()).padStart(2, '0')

@@ -1,6 +1,6 @@
 ﻿import "./scss/style.scss"
 import Comment from "./comment.html"
-import {formatDate, setTimeNow} from "./js/utils";
+import {elementByHtml, formatDate, setTimeNow} from "./js/utils";
 import {validateForm} from "./js/validation";
 
 const comments = document.getElementById('comments')
@@ -14,10 +14,8 @@ function createComment(name, text, date) {
         .replaceAll('$Text$', text)
         .replaceAll('$Date$', formatDate(date))
 
-    const template = document.createElement('template')
-    template.innerHTML = html
 
-    const comment = template.content.firstChild
+    const comment = elementByHtml(html)
     comment.addEventListener('click', (e) => {
         if (e.target.hasAttribute('data-delete'))
             comment.remove()
